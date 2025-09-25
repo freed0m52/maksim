@@ -138,14 +138,11 @@ html {
   height: 100%;
   border-radius: var(--radius);
 }
-/* Простой вариант с min-height */
 html, body {
   margin: 0;
-  padding: 0;
+  padding: 1;
 }
-
-
 main {
-  min-height: calc(100vh - 200px); /* Вычитаем примерную высоту header + footer */
+  min-height: calc(100vh - 200px);
   padding: var(--space-3);
 }
