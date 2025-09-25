@@ -3,7 +3,7 @@
   --color-bg: #fff;
   --color-fg: #0b0b0b;
   --color-muted: #666;
-  --color-primary: #0a84ff;
+  --color-primary: #5c1919;
   --color-danger: #b00020;
 
   /* Типографика и размеры */
@@ -25,7 +25,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.5;
   padding: var(--space-3);
-  background: var(--color-bg);
+  background: linear-gradient(#3b0101 0%, #180101 50%, #000000 100%);
   color: var(--color-fg);
 }
 
@@ -46,7 +46,7 @@ background: #fff;
 /* Кнопка по умолчанию */ 
 button, [type="submit"] {
   background: var(--color-primary);
-  color: #420303;
+  color: #ffffff;
   border: none; 
   cursor: pointer; 
 }
@@ -100,16 +100,19 @@ dialog::backdrop {
     padding: 0.75rem 1rem; 
 }
 
-
 .about-company {
     display: flex;
     justify-content: space-between;
 }
 /* Состояния ссылок */
-.nav__link:link { color: var(--color-fg); }
-.nav__link:visited { color: var(--color-muted); }
-.nav__link:hover { color: var(--color-primary); }
-.nav__link:active { opacity: 0.8; }
+.header__nav__link:link { color: var(--color-fg); }
+.header__nav__link:visited { color: var(--color-muted); }
+.header__nav__link:hover { color: var(--color-primary); }
+.header__nav__link:active { opacity: 0.8; }
+.main__svyaz:link { color: var(--color-fg); }
+.main__svyaz:visited { color: var(--color-muted); }
+.main__svyaz:hover { color: var(--color-primary); }
+.main__svyaz:active { opacity: 0.8; }
 
 /* Фокус для всех интерактивных элементов */
 :where(a, button, input, select, textarea):focus-visible {
@@ -119,7 +122,6 @@ dialog::backdrop {
 html {
     scroll-behavior: smooth;
 }
-
 
 :target {
   outline: 2px dashed var(--color-primary);
@@ -135,4 +137,15 @@ html {
   width: 100%;
   height: 100%;
   border-radius: var(--radius);
+}
+/* Простой вариант с min-height */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+main {
+  min-height: calc(100vh - 200px); /* Вычитаем примерную высоту header + footer */
+  padding: var(--space-3);
 }

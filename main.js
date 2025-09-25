@@ -20,10 +20,10 @@ function closeModal() {
 
 // Обработчик отправки формы
 function handleSubmit(e) {
-    // 1) Сброс кастомных сообщений
+    // Сброс кастомных сообщений
     [...form.elements].forEach(el => el.setCustomValidity?.(''));
     
-    // 2) Проверка встроенных ограничений
+    // Проверка встроенных ограничений
     if (!form.checkValidity()) {
         e.preventDefault();
         
@@ -39,14 +39,14 @@ function handleSubmit(e) {
         return;
     }
     
-    // 3) Успешная отправка (без сервера)
+    // Успешная отправка
     e.preventDefault();
-    alert('Сообщение успешно отправлено!');
+    alert('Таки я пишу ей миллионы писем, а ответа нет, что ж я сделал всё, что от меня зависело');
     dlg.close('success');
     form.reset();
 }
 
-// Навешиваем обработчики событий
+// Обработчики событий
 openBtn.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
 form.addEventListener('submit', handleSubmit);
@@ -55,8 +55,7 @@ form.addEventListener('submit', handleSubmit);
 dlg.addEventListener('close', () => {
     lastActive?.focus();
 });
-
-// Добавляем маску для телефона (дополнительная функция)
+// Маска для телефона
 const phone = document.getElementById('phone');
 if (phone) {
     phone.addEventListener('input', function() {
